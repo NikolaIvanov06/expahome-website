@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpaHome — Галерия</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <header id="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="ExpaHome" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Начало</a></li>
+                <li><a href="about.html" class="nav-link">За нас</a></li>
+                <li><a href="gallery.html" class="nav-link active">Галерия</a></li>
+                <li><a href="contact.html" class="nav-link">Контакти</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta">Запитване</a>
+            <button class="hamburger" id="hamburger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="page-hero page-hero-short">
+        <div class="hero-overlay-light"></div>
+        <div class="page-hero-bg" style="background-image:url('images/Exterior/IMG-20260119-WA0003.jpg')"></div>
+        <div class="container page-hero-content">
+            <span class="section-tag reveal">Галерия</span>
+            <h1 class="page-hero-title reveal reveal-delay-1">Нашите<br><em>реализирани проекти</em></h1>
+            <p class="page-hero-sub reveal reveal-delay-2">Разгледайте завършените ни проекти — от компактни студиа до
+                просторни семейни домове.</p>
+        </div>
+    </section>
+
+    <section class="gallery-filter-section">
+        <div class="container">
+            <div class="filter-tabs reveal">
+                <button class="filter-btn active" data-filter="all">Всички</button>
+                <button class="filter-btn" data-filter="exterior">Екстериор (EC-20/30/40ft)</button>
+                <button class="filter-btn" data-filter="interior">Интериор</button>
+                <button class="filter-btn" data-filter="process">Производство</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY GRID — all images 740–752 and 764–796 (excl 792) -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-masonry" id="galleryGrid">
+
+                <!-- Exterior Images -->
+                <div class="gallery-item reveal" data-category="exterior" data-delay="0">
+                    <img src="images/Exterior/1000023740.jpg" alt="Разгъваема контейнерна къща с дървесна облицовка" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Разгъваема къща — дървесен дизайн, напълно разгъната</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="40">
+                    <img src="images/Exterior/1000023749.jpg" alt="Модулна къща с веранда и люлка" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Модулна къща с покрита веранда и градина</span></div>
+                </div>
+
+                <div class="gallery-item wide reveal" data-category="exterior" data-delay="80">
+                    <img src="images/Exterior/1000023750.jpg" alt="Изложбена зона с две модулни къщи" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Изложбена зона — два модела с бяла ограда</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="120">
+                    <img src="images/Exterior/1000023751.jpg" alt="Сива модулна къща с покрита веранда" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Сива модулна къща с покрита тераса</span></div>
+                </div>
+
+                <div class="gallery-item tall reveal" data-category="exterior" data-delay="160">
+                    <img src="images/Exterior/1000023764.jpg" alt="Две разгъваеми контейнерни кутии с дървесна облицовка" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Две разгъваеми единици — дървесен дизайн, в процес на разгъване</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="200">
+                    <img src="images/Exterior/1000023765.jpg" alt="Контейнерна къща с каменна облицовка на фасадата" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Фасада с каменна облицовка — премиум вариант</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="240">
+                    <img src="images/Exterior/1000023766.jpg" alt="Бяла разгъваема контейнерна къща с панорамна врата" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Разгъваема 40ft — бял дизайн с панорамна врата</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="280">
+                    <img src="images/Exterior/1000023767.jpg" alt="Бяла разгъваема контейнерна къща, предна фасада" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Разгъваема 40ft — предна фасада с плъзгаща врата</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="320">
+                    <img src="images/Exterior/1000023779.jpg" alt="Разгъваема дървесна контейнерна къща с широка тераса" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Разгъваема къща с широка двустранна тераса и стъпала</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="360">
+                    <img src="images/Exterior/1000023780.jpg" alt="Разгъваема дървесна контейнерна къща с по-голяма тераса" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Разгъваема 40ft — дървесна облицовка с разширена тераса</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="exterior" data-delay="400">
+                    <img src="images/Exterior/1000023793.jpg" alt="Разгъваема контейнерна къща с дървесна облицовка, ъглова перспектива" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Разгъваема 40ft — стъклени плъзгащи врати, ъглова перспектива</span></div>
+                </div>
+
+                <!-- Interior Images -->
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="40">
+                    <img src="images/Interior/1000023742.jpg" alt="Баня с мраморен ефект, тоалетна, мивка и душ кабина" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Баня — мраморен ефект, тоалетна, мивка и душ кабина</span></div>
+                </div>
+
+                <div class="gallery-item wide reveal" data-category="interior" data-delay="80">
+                    <img src="images/Interior/1000023744.jpg" alt="Баня с бойлер, огледален шкаф и ретро стъклена врата" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Баня с бойлер, огледален шкаф и ретро стъклена врата</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="120">
+                    <img src="images/Interior/1000023745.jpg" alt="Спалня с двойно легло и дантелени завеси" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Спалня — двойно легло с дантелени завеси</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="160">
+                    <img src="images/Interior/1000023746.jpg" alt="Кухня с трапезария, бели шкафове и хладилник" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Кухня с трапезария — бели шкафове, хладилник и маса</span></div>
+                </div>
+
+                <div class="gallery-item tall reveal" data-category="interior" data-delay="200">
+                    <img src="images/Interior/1000023747.jpg" alt="Спалня с двойно легло, гардероб и дантелени завеси" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Спалня — двойно легло с гардероб и дантелени завеси</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="240">
+                    <img src="images/Interior/1000023748.jpg" alt="Просторен отворен план — хол, кухня и трапезария" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Отворен план — хол, трапезария и кухня в едно</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="280">
+                    <img src="images/Interior/1000023776.jpg" alt="3D план на 2-спална модулна къща" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">3D план — 2 спални, хол, кухня, баня и тераса</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="320">
+                    <img src="images/Interior/1000023782.jpg" alt="Просторна студио стая с кухненски кът и плъзгащи врати" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Студио — просторна стая с кухненски кът и плъзгащи врати</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="360">
+                    <img src="images/Interior/1000023783.jpg" alt="L-образна кухня с мивка и бели шкафове" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">L-образна кухня с мивка, шкафове и работен плот</span></div>
+                </div>
+
+                <div class="gallery-item tall reveal" data-category="interior" data-delay="400">
+                    <img src="images/Interior/1000023784.jpg" alt="Луксозна баня с мраморни стени и дъждовен душ" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Луксозна баня — мраморни стени, дъждовен душ и стъклена кабина</span></div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="interior" data-delay="440">
+                    <img src="images/Interior/1000023790.jpg" alt="Баня с мраморна облицовка, душ и тоалетна" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Баня — мраморна облицовка, дъждовен душ и тоалетна</span></div>
+                </div>
+
+                <div class="gallery-item wide reveal" data-category="interior" data-delay="480">
+                    <img src="images/Interior/1000023791.jpg" alt="Баня с мраморна облицовка, огледален шкаф и душ" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Баня — мраморна облицовка, огледален шкаф и душ кабина</span></div>
+                </div>
+
+                <!-- Process Images -->
+                <div class="gallery-item reveal" data-category="process" data-delay="0">
+                    <img src="images/Proizvodstveno/1000023772.jpg" alt="Инфографика: 5 стъпки за монтаж за 10 минути" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Монтаж в 5 стъпки — цялата къща за под 10 минути</span></div>
+                </div>
+
+                <div class="gallery-item tall reveal" data-category="process" data-delay="40">
+                    <img src="images/Proizvodstveno/1000023773.jpg" alt="3D техническа схема на стоманената конструкция в разгънато положение" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">3D схема — стоманена конструкция в разгънато положение</span></div>
+                </div>
+
+                <div class="gallery-item wide reveal" data-category="process" data-delay="80">
+                    <img src="images/Proizvodstveno/1000023774.jpg" alt="Стоманена конструкция на разгъваема контейнерна къща в завода" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-label">Стоманена конструкция — скелет на разгъваема контейнерна къща</span></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO GALLERY -->
+    <section class="video-gallery-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Видео</span>
+                <h2 class="section-title">Вижте <em>процеса</em><br>на живо</h2>
+            </div>
+            <div class="video-grid">
+                <div class="video-item reveal" data-delay="0">
+                    <video controls poster="images/Exterior/1000023764.jpg" preload="none">
+                        <source src="videos/1000023777.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-label">Монтаж на веранда и покрив</p>
+                </div>
+                <div class="video-item reveal" data-delay="100">
+                    <video controls poster="images/LandingPage/1000024217.png" preload="none">
+                        <source src="videos/c0bf5427-37ce-4501-b63a-11bc04cc4bc2.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-label">Процес на разгъване</p>
+                </div>
+                <div class="video-item reveal" data-delay="200">
+                    <video controls poster="images/LandingPage/1000024219.png" preload="none">
+                        <source src="videos/1000023785.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-label">Завършен проект</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Клиенти за нас</span>
+                <h2 class="section-title">Какво казват<br><em>нашите клиенти</em></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>"Невероятна организация и качество! Монтажът отне само 8 часа и резултатът надмина всички ни
+                        очаквания. Препоръчвам на всеки!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ИП</div>
+                        <div>
+                            <strong>Иван Петров</strong>
+                            <span>Разгъваема 20×40ft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="stars">★★★★★</div>
+                    <p>"Финансирането чрез DSK беше лесно и бързо. Сега имаме чудесна ваканционна база на морето.
+                        Качеството е отлично!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">МС</div>
+                        <div>
+                            <strong>Мария Стоянова</strong>
+                            <span>Compact 20×20ft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="stars">★★★★★</div>
+                    <p>"Топло през зимата, хладно през лятото. Термоизолацията работи перфектно. Живеем тук вече 2
+                        години и сме много доволни."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ГД</div>
+                        <div>
+                            <strong>Георги Димитров</strong>
+                            <span>Standard 20×40ft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <h2>Харесахте нещо?</h2>
+                <p>Свържете се с нас и ние ще изработим индивидуална оферта за вас.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-white">Заявете запитване</a>
+                    <a href="about.html" class="btn btn-ghost-white">Научете повече →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html"><strong>ExpaHome TD</strong></a>
+                    <p>Водещ дистрибутор на разгъваеми и контейнерни жилища в България. Качество, бързина, надеждност.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/profile.php?id=61585640309355" target="_blank"
+                            rel="noopener noreferrer" class="social-icon" title="Facebook">f</a>
+                        <a href="https://instagram.com/expahome" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" title="Instagram">📷</a>
+                        <a href="https://youtube.com/@expahome" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" title="YouTube">▶</a>
+                        <a href="https://linkedin.com/company/expahome" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" title="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Навигация</h5>
+                        <ul>
+                            <li><a href="index.html">Начало</a></li>
+                            <li><a href="about.html">За нас</a></li>
+                            <li><a href="gallery.html">Галерия</a></li>
+                            <li><a href="contact.html">Контакти</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Контакти</h5>
+                        <ul>
+                            <li>📞 +359 892 91 2246</li>
+                            <li>✉ expahomedt@gmail.com</li>
+                            <li>📍 България</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 ExpaHome. Всички права запазени.</p>
+                <p>Изработено с ❤ в България</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

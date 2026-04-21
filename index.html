@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpaHome — Разгъваеми и Контейнерни Къщи</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline styles for new elements */
+        .tech-specs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tech-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--green);
+        }
+
+        .tech-card h4 {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .tech-card p {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+        }
+
+        .color-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px #ddd;
+            cursor: default;
+        }
+
+        .decoration-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .decoration-showcase img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .tech-specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tech-specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <header id="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="ExpaHome" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Начало</a></li>
+                <li><a href="about.html" class="nav-link">За нас</a></li>
+                <li><a href="gallery.html" class="nav-link">Галерия</a></li>
+                <li><a href="contact.html" class="nav-link">Контакти</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta">Запитване</a>
+            <button class="hamburger" id="hamburger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO with slider -->
+    <section class="hero">
+        <div class="hero-slider" id="heroSlider">
+            <div class="hero-slide active" style="background-image:url('images/LandingPage/1000024214.png')"></div>
+            <div class="hero-slide" style="background-image:url('images/LandingPage/1000024218.png')"></div>
+            <div class="hero-slide" style="background-image:url('images/LandingPage/1000024216.png')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <div class="hero-badge reveal">● Иновативно модулно строителство</div>
+            <h1 class="hero-title reveal reveal-delay-1">Вашият дом.<br><em>Разгънат до съвършенство.</em></h1>
+            <p class="hero-sub reveal reveal-delay-2">Разгъваеми и контейнерни къщи с пълна инсталация — доставени и
+                монтирани за дни. Експлозивен ръст в 30+ държави.</p>
+            <div class="hero-actions reveal reveal-delay-3">
+                <a href="#products" class="btn btn-primary">Разгледайте моделите</a>
+                <a href="gallery.html" class="btn btn-ghost-white">Вижте галерията →</a>
+            </div>
+            <div class="hero-stats reveal reveal-delay-4">
+                <div class="stat">
+                    <span class="stat-num" data-target="150">0</span><span>+</span>
+                    <span class="stat-label">Реализирани проекта</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-target="30">0</span><span>+</span>
+                    <span class="stat-label">Страни клиенти</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-target="25">0</span><span>дни</span>
+                    <span class="stat-label">Средно производство</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider-dots" id="heroSliderDots">
+            <button class="dot active" data-slide="0"></button>
+            <button class="dot" data-slide="1"></button>
+            <button class="dot" data-slide="2"></button>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- INTRO STRIP (updated with manufacturer info) -->
+    <section class="intro-strip">
+        <div class="container">
+            <p class="strip-text reveal">ЕкспаХоум ДТ ЕООД – официален представител на CASA BOX (CGCH). Специализирани в
+                производството на разгъваеми, плоски и сгъваеми контейнерни къщи с над 15 години опит и месечен
+                капацитет от 300 000 тона лека стомана.</p>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Вижте как работи</span>
+                <h2 class="section-title">Разгъваща се конструкция<br><em>за минути</em></h2>
+            </div>
+            <div class="video-grid">
+                <div class="video-item reveal" data-delay="0">
+                    <video controls poster="images/Exterior/1000023740.jpg" preload="none">
+                        <source src="videos/1000023777.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-label">Монтаж на веранда и покрив</p>
+                </div>
+                <div class="video-item reveal" data-delay="100">
+                    <video controls poster="images/Interior/1000023742.jpg" preload="none">
+                        <source src="videos/c0bf5427-37ce-4501-b63a-11bc04cc4bc2.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-label">Процес на разгъване</p>
+                </div>
+                <div class="video-item reveal" data-delay="200">
+                    <video controls poster="images/Interior/1000023744.jpg" preload="none">
+                        <source src="videos/1000023785.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-label">Завършен проект</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS - expanded with detailed models from documents -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Нашите модели</span>
+                <h2 class="section-title">Разгъваеми контейнерни къщи.<br><em>20ft, 30ft, 40ft</em></h2>
+            </div>
+            <div class="house-grid">
+                <!-- EC-20ft -->
+                <div class="house-card reveal" data-delay="0">
+                    <div class="house-img-wrap">
+                        <img src="images/LandingPage/1000024217.png" alt="EC-20ft Разгъваема" loading="lazy">
+                        <div class="house-tag">Най-икономична</div>
+                    </div>
+                    <div class="house-body">
+                        <h3>EC-20ft Разгъваема</h3>
+                        <div class="house-specs">
+                            <div class="spec"><span class="spec-icon">📐</span><span>6,48x5,90x2,48 м</span></div>
+                            <div class="spec"><span class="spec-icon">🚢</span><span>40HC: 2 единици</span></div>
+                            <div class="spec"><span class="spec-icon">🛏</span><span>до 3 спални</span></div>
+                            <div class="spec"><span class="spec-icon">🚿</span><span>Баня + кухня</span></div>
+                        </div>
+                        <p class="house-desc">Разгъваема къща с двукрила конструкция от поцинкована стомана. Идеална за
+                            Airbnb, офиси или временно жилище. Срок на експлоатация до 30 години.</p>
+                        <ul class="house-features">
+                            <li>✓ Алуминиеви врати/прозорци с мрежи против комари</li>
+                            <li>✓ PVC под, шкафове за баня и кухня</li>
+                            <li>✓ Предварително монтирани ел. и ВиК</li>
+                            <li>✓ EPS/PIR изолация, опционални декоративни панели</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Запитване за цена →</a>
+                    </div>
+                </div>
+
+                <!-- EC-30ft -->
+                <div class="house-card featured reveal" data-delay="100">
+                    <div class="house-img-wrap">
+                        <img src="images/LandingPage/1000024219.png" alt="EC-30ft Разгъваема" loading="lazy">
+                        <div class="house-tag popular">Най-популярен</div>
+                    </div>
+                    <div class="house-body">
+                        <h3>EC-30ft Разгъваема</h3>
+                        <div class="house-specs">
+                            <div class="spec"><span class="spec-icon">📐</span><span>6,34x9,00x2,48 м</span></div>
+                            <div class="spec"><span class="spec-icon">🚢</span><span>40HC: 1 единица</span></div>
+                            <div class="spec"><span class="spec-icon">🛏</span><span>до 3 спални</span></div>
+                            <div class="spec"><span class="spec-icon">⚡</span><span>Пълна инсталация</span></div>
+                        </div>
+                        <p class="house-desc">Просторна разгъваема единица с гъвкаво разпределение. Персонализируеми
+                            цветове на стените (бяло, черно или RAL гама).</p>
+                        <ul class="house-features">
+                            <li>✓ Нова алуминиева сплав – отлична топлоизолация</li>
+                            <li>✓ Двукрила конструкция, компактна при транспорт</li>
+                            <li>✓ Опция за релефни метални панели (embossed)</li>
+                            <li>✓ Подови настилки PVC или SPC</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Запитване за цена →</a>
+                    </div>
+                </div>
+
+                <!-- EC-40ft -->
+                <div class="house-card reveal" data-delay="200">
+                    <div class="house-img-wrap">
+                        <img src="images/LandingPage/1000024216.png" alt="EC-40ft Разгъваема" loading="lazy">
+                        <div class="house-tag">Луксозен модел</div>
+                    </div>
+                    <div class="house-body">
+                        <h3>EC-40ft Разгъваема</h3>
+                        <div class="house-specs">
+                            <div class="spec"><span class="spec-icon">📐</span><span>6,34x11,80x2,48 м</span></div>
+                            <div class="spec"><span class="spec-icon">🚢</span><span>40HC: 1 единица</span></div>
+                            <div class="spec"><span class="spec-icon">🛏</span><span>до 4 спални</span></div>
+                            <div class="spec"><span class="spec-icon">🌞</span><span>Соларна опция</span></div>
+                        </div>
+                        <p class="house-desc">Максимална площ и комфорт. Идеална за семейно живеене или хотелски
+                            комплекс. Може да включва тераса 1,5м / 2м / 3м.</p>
+                        <ul class="house-features">
+                            <li>✓ Поцинкована стоманена рамка</li>
+                            <li>✓ Възможност за двуетажни конструкции</li>
+                            <li>✓ Алуминиеви плъзгащи или крилни врати</li>
+                            <li>✓ Разнообразие от външни цветове и панели</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Запитване за цена →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SPECIFICATIONS SECTION (new, from documents) -->
+    <section class="features-strip" style="background: var(--charcoal);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Технически характеристики</span>
+                <h2 class="section-title">Инженерство <em>на световно ниво</em></h2>
+            </div>
+            <div class="tech-specs-grid">
+                <div class="tech-card reveal">
+                    <div class="tech-icon">🏗️</div>
+                    <h4>Поцинкована стомана</h4>
+                    <p>Здрава, устойчива на ръжда конструкция с дълъг живот.</p>
+                </div>
+                <div class="tech-card reveal">
+                    <div class="tech-icon">🧱</div>
+                    <h4>EPS / PIR панели</h4>
+                    <p>Най-добра топлоизолация, подходяща за тежки студове.</p>
+                </div>
+                <div class="tech-card reveal">
+                    <div class="tech-icon">🎨</div>
+                    <h4>Бои на водна основа</h4>
+                    <p>Екологични и издръжливи, използвани във всички производствени линии.</p>
+                </div>
+                <div class="tech-card reveal">
+                    <div class="tech-icon">🚛</div>
+                    <h4>Оптимизиран транспорт</h4>
+                    <p>20ft модел – 2 бр. в 40HC контейнер, без загуба на пространство.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US (enriched) -->
+    <section class="features-strip" style="background: var(--blue);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Защо ExpaHome</span>
+                <h2 class="section-title">Предимствата,<br>които ни отличават</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item reveal" data-delay="0">
+                    <div class="feature-icon">🏭</div>
+                    <h4>3 собствени фабрики</h4>
+                    <p>16 000+ м² производствени площи, над 100 партньора за доставки.</p>
+                </div>
+                <div class="feature-item reveal" data-delay="80">
+                    <div class="feature-icon">💰</div>
+                    <h4>Годишен оборот $50M</h4>
+                    <p>Производствен капацитет: над 300 000 тона лека стомана месечно.</p>
+                </div>
+                <div class="feature-item reveal" data-delay="160">
+                    <div class="feature-icon">🌍</div>
+                    <h4>30+ държави</h4>
+                    <p>Продадени в Европа, Азия, Америка – доказано качество.</p>
+                </div>
+                <div class="feature-item reveal" data-delay="240">
+                    <div class="feature-icon">🔧</div>
+                    <h4>Персонализация</h4>
+                    <p>Над 100 варианта декоративни панели, цветове и интериорни решения.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXTERIOR COLOR & DECORATION SHOWCASE (from documents) -->
+    <section class="materials" style="background: #f5f8f3;">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Свободен избор на цвят</span>
+                <h2 class="section-title">Екстериор, който <em>вдъхновява</em></h2>
+            </div>
+            <div class="color-options">
+                <div class="color-swatch" style="background: #ffffff;"></div>
+                <div class="color-swatch" style="background: #000000;"></div>
+                <div class="color-swatch" style="background: #d4af37;"></div>
+                <div class="color-swatch" style="background: #8b5a2b;"></div>
+                <div class="color-swatch" style="background: #2c3e50;"></div>
+                <div class="color-swatch" style="background: #7f8c8d;"></div>
+                <div class="color-swatch" style="background: #c0392b;"></div>
+                <div class="color-swatch" style="background: #2980b9;"></div>
+            </div>
+            <p class="section-sub" style="margin-top: 1rem;">Стенните панели са сандвич от стомана, предлагаме всякакъв
+                RAL цвят. По желание: метални релефни панели за премиум визия и допълнителна изолация.</p>
+            <div class="decoration-showcase">
+                <img src="images/Exterior/1000023749.jpg" alt="декор панел 1">
+                <img src="images/Exterior/1000023779.jpg" alt="декор панел 2">
+                <img src="images/Exterior/wmremove-transformed.png" alt="декор панел 3">
+                <img src="images/Exterior/wmremove-transformed (1).png" alt="декор панел 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERIOR & WINDOWS/DOORS DETAILS -->
+    <section class="included-section">
+        <div class="container">
+            <div class="included-inner">
+                <div class="included-img reveal">
+                    <img src="images/Interior/IMG-20260326-WA0006.jpg" alt="Интериор на разгъваема къща">
+                </div>
+                <div class="included-text reveal reveal-delay-1">
+                    <span class="section-tag">Включени елементи</span>
+                    <h2>Баня, кухня, врати и подови настилки</h2>
+                    <p>Всяка къща идва с L-образни кухненски шкафове, мивка, огледален шкаф, тоалетна и душ кабина.
+                        Опционално добавяне на горни шкафове.</p>
+                    <div class="included-list">
+                        <div class="inc-item"><span class="inc-check">✓</span> Алуминиеви прозорци (плъзгащи или крилни)
+                            с мрежи против комари</div>
+                        <div class="inc-item"><span class="inc-check">✓</span> Входна врата – алуминий термо мост или
+                            стоманена</div>
+                        <div class="inc-item"><span class="inc-check">✓</span> PVC под (много цветове) или SPC под
+                            (премиум)</div>
+                        <div class="inc-item"><span class="inc-check">✓</span> Спални врати – стоманени или
+                            алуминиево-дървени</div>
+                        <div class="inc-item"><span class="inc-check">✓</span> Контакти, ключове, LED осветление</div>
+                        <div class="inc-item"><span class="inc-check">✓</span> Тераса по избор (1.5m / 2m / 3m ширина)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANCED EXTERIOR WALL DECORATION (summarized from doc) -->
+    <section class="factory-section" style="background: #f5f8f3;">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Ексклузивна декорация</span>
+                <h2 class="section-title">Премиум релефни панели<br><em>метал ембосинг</em></h2>
+                <p class="section-sub">Добавете слой от метални релефни панели за подобрена естетика и изолация. На
+                    разположение са над 8 различни дизайна, вдъхновени от дърво, камък и геометрични шарки.</p>
+            </div>
+            <div class="factory-grid">
+                <div class="factory-img reveal"><img src="images/Proizvodstveno/1000023774.jpg" alt="Релефен панел 1">
+                </div>
+                <div class="factory-img reveal"><img src="images/Exterior/1000023765.jpg" alt="Релефен панел 2"></div>
+                <div class="factory-img reveal"><img src="images/Exterior/FB_IMG_1776592500681.jpg"
+                        alt="Релефен панел 3"></div>
+                <div class="factory-img reveal"><img src="images/Exterior/IMG-20260318-WA0004.jpg"
+                        alt="Релефен панел 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS (updated with timeline) -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Как работим</span>
+                <h2 class="section-title">От запитване до ключ<br><em>за 30 дни</em></h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-num">01</div>
+                    <div class="step-body">
+                        <h4>Безплатна консултация</h4>
+                        <p>Обсъждаме модел (20/30/40ft), разпределение, цветове.</p>
+                    </div>
+                </div>
+                <div class="process-arrow reveal">→</div>
+                <div class="process-step reveal">
+                    <div class="step-num">02</div>
+                    <div class="step-body">
+                        <h4>Оферта и 3D проект</h4>
+                        <p>Персонализиран дизайн с оглед на вашия терен.</p>
+                    </div>
+                </div>
+                <div class="process-arrow reveal">→</div>
+                <div class="process-step reveal">
+                    <div class="step-num">03</div>
+                    <div class="step-body">
+                        <h4>Производство</h4>
+                        <p>25–30 дни с автоматизирани линии и контрол на качеството.</p>
+                    </div>
+                </div>
+                <div class="process-arrow reveal">→</div>
+                <div class="process-step reveal">
+                    <div class="step-num">04</div>
+                    <div class="step-body">
+                        <h4>Доставка и монтаж</h4>
+                        <p>Доставяме до обекта, монтаж с кран за часове.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY PREVIEW (unchanged but present) -->
+    <section class="gallery-preview">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Реализирани проекти</span>
+                <h2 class="section-title">Вижте нашите<br><em>завършени проекти</em></h2>
+            </div>
+        </div>
+        <div class="preview-grid">
+            <div class="preview-item tall reveal" data-delay="0"><img src="images/Interior/1000023747.jpg"
+                    alt="Жилищен проект">
+                <div class="preview-overlay"><span>Жилищен проект</span></div>
+            </div>
+            <div class="preview-item reveal" data-delay="80"><img src="images/Interior/1000023748.jpg"
+                    alt="Хотелски проект">
+                <div class="preview-overlay"><span>Хотелски проект</span></div>
+            </div>
+            <div class="preview-item reveal" data-delay="160"><img src="images/Exterior/1000023749.jpg"
+                    alt="Офис обект">
+                <div class="preview-overlay"><span>Офис обект</span></div>
+            </div>
+            <div class="preview-item wide reveal" data-delay="240"><img src="images/Exterior/1000023766.jpg"
+                    alt="Ваканционна вила">
+                <div class="preview-overlay"><span>Ваканционна вила</span></div>
+            </div>
+        </div>
+        <div class="preview-cta reveal">
+            <a href="gallery.html" class="btn btn-primary">Вижте пълната галерия →</a>
+        </div>
+    </section>
+
+    <!-- FINANCING -->
+    <section class="financing">
+        <div class="container">
+            <div class="financing-inner reveal">
+                <div class="financing-text">
+                    <span class="section-tag">Финансиране</span>
+                    <h2>Достъпно<br>за всеки</h2>
+                    <p>Работим с водещи банки партньори в България, за да направим мечтата ви за собствен дом — реалност
+                        още днес.</p>
+                    <div class="bank-partners">
+                        <div class="bank-badge">🏦 DSK Bank</div>
+                        <div class="bank-badge">🏦 UniCredit Bulbank</div>
+                    </div>
+                    <ul class="financing-list">
+                        <li>✓ Банков ипотечен кредит</li>
+                        <li>✓ Стоков кредит без поръчители</li>
+                        <li>✓ Индивидуален погасителен план</li>
+                        <li>✓ Бърза предварителна одобрение</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Разберете повече →</a>
+                </div>
+                <div class="financing-visual">
+                    <div class="financing-img-wrap">
+                        <img src="images/Exterior/1000023750.jpg" alt="Финансиране на модулна къща">
+                        <div class="financing-card-overlay">
+                            <div class="fc-label">Примерна вноска</div>
+                            <div class="fc-amount">от <strong>350 лв.</strong> / месец</div>
+                            <div class="fc-note">при 60 месеца кредит</div>
+                            <div class="fc-disclaimer">* Индикативни стойности. Условията се определят от банката.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <h2>Готови да започнете?</h2>
+                <p>Свържете се с нас за безплатна консултация и индивидуална оферта. Отговаряме до 24 часа.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-white">Безплатна консултация</a>
+                    <a href="gallery.html" class="btn btn-ghost-white">Вижте галерията →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html"><strong>ExpaHome TD</strong></a>
+                    <p>Официален представител на CASA BOX (CGCH) – 15 години опит, три завода, доставки в над 30
+                        държави.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/profile.php?id=61585640309355" target="_blank"
+                            class="social-icon">f</a>
+                        <a href="https://instagram.com/expahome" target="_blank" class="social-icon">📷</a>
+                        <a href="https://youtube.com/@expahome" target="_blank" class="social-icon">▶</a>
+                        <a href="https://linkedin.com/company/expahome" target="_blank" class="social-icon">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Навигация</h5>
+                        <ul>
+                            <li><a href="index.html">Начало</a></li>
+                            <li><a href="about.html">За нас</a></li>
+                            <li><a href="gallery.html">Галерия</a></li>
+                            <li><a href="contact.html">Контакти</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Контакти</h5>
+                        <ul>
+                            <li>📞 +359 892 91 2246</li>
+                            <li>✉ expahomedt@gmail.com</li>
+                            <li>📍 България</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 ExpaHome. Всички права запазени.</p>
+                <p>Изработено с ❤ в България</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
