@@ -45,10 +45,10 @@ exports.handler = async (event) => {
     }
 
     const clean = (str) => String(str || '').replace(/[<>]/g, '').trim().slice(0, 2000);
-    const safeName    = clean(name);
-    const safeEmail   = clean(email);
-    const safePhone   = clean(phone) || 'Не е посочен';
-    const safeModel   = clean(model) || 'Не е избран';
+    const safeName = clean(name);
+    const safeEmail = clean(email);
+    const safePhone = clean(phone) || 'Не е посочен';
+    const safeModel = clean(model) || 'Не е избран';
     const safeMessage = clean(message);
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -63,7 +63,7 @@ exports.handler = async (event) => {
       headers: { 'Authorization': `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         from: 'ExpaHome Website <noreply@expahome.bg>',
-        to: ['expahometd@gmail.com'],
+        to: ['expahomedt@gmail.com'],
         reply_to: safeEmail,
         subject: `🏠 Ново запитване от ${safeName} — ${safeModel}`,
         html: buildInquiryEmail({ name: safeName, email: safeEmail, phone: safePhone, model: safeModel, message: safeMessage })
@@ -83,7 +83,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         from: 'ExpaHome <noreply@expahome.bg>',
         to: [safeEmail],
-        reply_to: 'expahometd@gmail.com',
+        reply_to: 'expahomedt@gmail.com',
         subject: 'Благодарим за вашето запитване — ExpaHome',
         html: buildAutoReplyEmail({ name: safeName, model: safeModel, message: safeMessage })
       })
