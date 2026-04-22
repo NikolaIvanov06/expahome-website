@@ -93,29 +93,10 @@ const revealObs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// === COUNTER ANIMATION ===
-function animateCounter(el) {
-    const target = parseInt(el.dataset.target);
-    const duration = 1800;
-    const step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-        current += step;
-        if (current >= target) { el.textContent = target; clearInterval(timer); }
-        else { el.textContent = Math.floor(current); }
-    }, 16);
-}
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.stat-num').forEach(animateCounter);
-            }
-        });
-    }, { threshold: 0.5 }).observe(heroStats);
-}
+// === COUNTER ANIMATION (removed) ===
+document.querySelectorAll('.stat-num').forEach(el => {
+    el.textContent = el.dataset.target;
+});
 
 // === SMOOTH SCROLL ===
 document.querySelectorAll('a[href^="#"]').forEach(link => {
