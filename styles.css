@@ -40,6 +40,7 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -49,6 +50,13 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
     cursor: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
 img {
@@ -295,6 +303,7 @@ video {
     letter-spacing: .02em;
     transition: all var(--transition);
     cursor: none;
+    text-align: center;
 }
 
 .btn-primary {
@@ -1682,6 +1691,10 @@ video {
     align-items: start;
 }
 
+.contact-grid>* {
+    min-width: 0;
+}
+
 .contact-info-col h2 {
     font-family: var(--font-display);
     font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -1731,6 +1744,7 @@ video {
 .contact-item span {
     font-size: .9rem;
     color: var(--mid-gray);
+    overflow-wrap: anywhere;
 }
 
 .contact-item a:hover {
@@ -2547,6 +2561,175 @@ video {
 }
 
 @media (max-width:768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .logo-img {
+        height: 72px;
+    }
+
+    .mobile-menu {
+        padding: .75rem 1.25rem 1.25rem;
+    }
+
+    .mobile-menu ul li a {
+        display: block;
+        padding: .3rem 0;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 86px;
+        align-items: flex-start;
+    }
+
+    .hero-slide {
+        background-position: 58% center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(180deg, rgba(26, 37, 51, .72) 0%, rgba(26, 37, 51, .58) 55%, rgba(26, 37, 51, .78) 100%);
+    }
+
+    .hero-content {
+        padding: 3rem 1.25rem 5rem;
+        max-width: 100%;
+    }
+
+    .hero-badge {
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.35;
+    }
+
+    .hero-title {
+        font-size: clamp(2.3rem, 13vw, 3.4rem);
+        line-height: 1.04;
+        margin-bottom: 1rem;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-sub {
+        font-size: .98rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+        gap: .65rem;
+        margin-bottom: 2.25rem;
+    }
+
+    .hero-actions .btn,
+    .cta-actions .btn {
+        width: 100%;
+        padding: .85rem 1rem;
+    }
+
+    .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .85rem;
+    }
+
+    .stat {
+        align-items: baseline;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-num {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        margin-top: 0;
+        line-height: 1.35;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .video-section,
+    .products,
+    .features-strip,
+    .process,
+    .financing,
+    .about-story,
+    .factory-section,
+    .materials,
+    .included-section,
+    .certs,
+    .testimonials,
+    .faq-section {
+        padding: 4rem 0;
+    }
+
+    .gallery-preview {
+        padding-top: 4rem;
+    }
+
+    .page-hero,
+    .page-hero-short {
+        min-height: auto;
+        padding-top: 86px;
+    }
+
+    .page-hero-content {
+        padding: 3.25rem 1.25rem;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .page-hero-title {
+        font-size: clamp(2.25rem, 12vw, 3.2rem);
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .page-hero-sub {
+        font-size: .98rem;
+    }
+
+    .house-img-wrap,
+    .about-main-img,
+    .included-img img,
+    .financing-img-wrap img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-img-badge {
+        right: .75rem;
+        bottom: .75rem;
+        max-width: calc(100% - 1.5rem);
+    }
+
+    .contact-form-card,
+    .testimonial-card,
+    .faq-card,
+    .mv-card,
+    .feature-item {
+        padding: 1.5rem;
+    }
+
+    .contact-grid>*,
+    .financing-inner>*,
+    .included-inner>*,
+    .certs-inner>*,
+    .about-grid>* {
+        min-width: 0;
+    }
+
+    .cursor,
+    .cursor-dot {
+        display: none;
+    }
 
     .nav-links,
     .nav-cta {
@@ -2647,6 +2830,116 @@ video {
 }
 
 @media (max-width:480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .logo-img {
+        height: 62px;
+    }
+
+    .hamburger {
+        padding: .6rem;
+        margin-right: -.6rem;
+    }
+
+    .hero {
+        padding-top: 74px;
+    }
+
+    .hero-content {
+        padding: 2.25rem 1rem 4.25rem;
+    }
+
+    .hero-badge {
+        font-size: .72rem;
+        padding: .4rem .75rem;
+        letter-spacing: .04em;
+    }
+
+    .hero-title {
+        font-size: clamp(2.05rem, 14vw, 2.9rem);
+    }
+
+    .hero-sub {
+        font-size: .94rem;
+        line-height: 1.6;
+    }
+
+    .section-title,
+    .financing-text h2,
+    .cta-inner h2,
+    .about-text-col h2,
+    .included-text h2,
+    .certs-text h2 {
+        font-size: clamp(1.75rem, 10vw, 2.35rem);
+        line-height: 1.15;
+    }
+
+    .page-hero,
+    .page-hero-short {
+        padding-top: 74px;
+    }
+
+    .page-hero-title {
+        font-size: clamp(2rem, 13vw, 2.75rem);
+    }
+
+    .video-section,
+    .products,
+    .features-strip,
+    .process,
+    .financing,
+    .about-story,
+    .factory-section,
+    .materials,
+    .included-section,
+    .certs,
+    .testimonials,
+    .faq-section {
+        padding: 3rem 0;
+    }
+
+    .house-specs,
+    .included-list,
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: .4rem;
+        scrollbar-width: none;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .contact-form-card,
+    .testimonial-card,
+    .faq-card,
+    .mv-card,
+    .feature-item,
+    .house-body {
+        padding: 1.25rem;
+    }
+
+    .contact-item,
+    .cert-badge {
+        padding: 1rem;
+    }
+
+    .map-wrap iframe {
+        height: 320px;
+    }
+
     .materials-grid {
         grid-template-columns: 1fr;
     }
@@ -2675,6 +2968,35 @@ video {
     }
 
     .factory-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    body,
+    .btn,
+    .gallery-item,
+    .filter-btn,
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        cursor: auto;
+    }
+
+    .cursor,
+    .cursor-dot {
+        display: none;
+    }
+
+    .gallery-overlay,
+    .preview-overlay {
+        opacity: 1;
+    }
+
+    .gallery-item:hover img,
+    .preview-item:hover img,
+    .house-card:hover .house-img-wrap img,
+    .factory-img:hover img {
+        transform: none;
     }
 }

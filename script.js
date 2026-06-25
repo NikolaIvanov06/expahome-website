@@ -6,7 +6,9 @@
 const cursor = document.querySelector('.cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 
-if (cursor && cursorDot) {
+const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+if (cursor && cursorDot && hasFinePointer) {
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
 
