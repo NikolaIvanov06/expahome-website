@@ -140,7 +140,7 @@ if (filterBtns.length > 0) {
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
-const API_ENDPOINT = '/.netlify/functions/contact';
+const API_ENDPOINT = '/api/contact';
 
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -204,7 +204,7 @@ if (contactForm) {
             }
         } catch (error) {
             console.error('Form submission error:', error);
-            showError(error.message || 'Възникна грешка при изпращането. Моля, опитайте отново или се свържете с нас на expahomedt@gmail.com');
+            showError(error.message || 'Възникна грешка при изпращането. Моля, опитайте отново или се свържете с нас на office@expahome.bg');
 
             // Reset button
             if (btnText) btnText.style.display = 'inline';

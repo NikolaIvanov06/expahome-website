@@ -63,6 +63,8 @@ export default async function handler(req, res) {
       return res.status(500).json({ success: false, error: 'Server configuration error' });
     }
 
+    const OFFICE_EMAIL = 'office@expahome.bg';
+
     // ============================================================
     //  EMAIL 1: Notification to ExpaHome team
     // ============================================================
@@ -83,7 +85,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         // Requires domain verified in Resend dashboard (resend.com/domains)
         from: 'ExpaHome Website <noreply@expahome.bg>',
-        to: ['info@expahome.bg'], // Cloudflare Email Routing forwards this to your Gmail
+        to: [OFFICE_EMAIL],
         reply_to: safeEmail,
         subject: `🏠 Ново запитване от ${safeName} — ${safeModel}`,
         html: inquiryHtml
@@ -114,7 +116,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: 'ExpaHome <noreply@expahome.bg>',
         to: [safeEmail],
-        reply_to: 'info@expahome.bg',
+        reply_to: OFFICE_EMAIL,
         subject: 'Благодарим за вашето запитване — ExpaHome',
         html: autoReplyHtml
       })
@@ -329,7 +331,7 @@ function buildAutoReplyEmail({ name, model, message }) {
           <p style="margin:0 0 16px 0;color:#8b6f47;font-family:'Georgia',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-align:center;">Свържете се с нас директно</p>
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr><td align="center" style="padding:4px 0;"><a href="tel:+359882541800" style="color:#2c1810;font-family:'Georgia',serif;font-size:15px;text-decoration:none;">📞 +359 88 254 1800</a></td></tr>
-            <tr><td align="center" style="padding:4px 0;"><a href="mailto:info@expahome.bg" style="color:#2c1810;font-family:'Georgia',serif;font-size:15px;text-decoration:none;">✉ info@expahome.bg</a></td></tr>
+            <tr><td align="center" style="padding:4px 0;"><a href="mailto:office@expahome.bg" style="color:#2c1810;font-family:'Georgia',serif;font-size:15px;text-decoration:none;">✉ office@expahome.bg</a></td></tr>
             <tr><td align="center" style="padding:4px 0;color:#6b5d4f;font-family:'Georgia',serif;font-size:15px;">📍 България</td></tr>
           </table>
         </td>
